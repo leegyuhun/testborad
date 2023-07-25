@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header"/>
+<body>
+    <div class="container">
+        <div th:replace="fragments/bodyHeader :: bodyHeader" />
+
+        <div class="px-4 py-2 my-2 text-center">
+            <img class="d-block mx-auto mb-4" src="/img/icon_blank.jpg">
+<!--            <img src="/img/icon_blank.jpg">-->
+<!--            <img src="icon_blank.jpg">-->
+        </div>
+
+        <table class="table table-striped">
+            <thead>
+                <tr class="table-dark" align="center">
+                    <th>#</th>
+                    <th>제품명</th>
+                    <th>제품가격</th>
+                </tr>
+            </thead>
+            <tr th:each="list : ${list}">
+                <td align="center" th:text="${list.productNumber}">#</td>
+                <td th:text="${list.productName}">#</td>
+                <td align="right" th:text="${#numbers.formatInteger(list.productPrice,1,'COMMA')}">#</td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

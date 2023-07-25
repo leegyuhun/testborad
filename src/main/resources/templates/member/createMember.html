@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header"/>
+<body>
+<div class="container">
+    <div th:replace="fragments/bodyHeader :: bodyHeader" />
+
+    <!-- form = 값을 입력할수 있는 html -->
+    <form action="/member/new" method="post">
+        <div class="form-group">
+            <label>ID</label>
+            <!-- name이 중요 서버로 넘어올때 key, placeholder=EmptyText -->
+<!--            <input type="text" name="userID" placeholder="ID를 입력하세요">-->
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">ID</span>
+                </div>
+                <input type="text" name="userID" class="form-control" placeholder="ID를 입력하세요" aria-describedby="basic-addon1">
+
+                <div class="input-group-prepend">
+                    <span class="input-group-text">PW</span>
+                </div>
+                <input type="text" name="userPW" class="form-control" placeholder="비번을 입력하세요" aria-describedby="basic-addon1">
+
+                <div class="input-group-prepend">
+                    <span class="input-group-text">이름</span>
+                </div>
+                <input type="text" name="userName" class="form-control" placeholder="이름을 입력하세요" aria-describedby="basic-addon1">
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">E-Mail</span>
+                </div>
+                <input type="text" name="userEmail" class="form-control" placeholder="E-Mail을 입력하세요" aria-describedby="basic-addon1">
+
+                <div class="input-group-prepend">
+                    <span class="input-group-text">생년월일</span>
+                </div>
+                <input type="text" name="userBirth" class="form-control" placeholder="yyyyMMdd" aria-describedby="basic-addon1">
+            </div>
+        </div>
+
+        <p><button class="btn btn-primary btn-block" type="submit">등록</button></p>
+    </form>
+</div>
+</body>
+</html>

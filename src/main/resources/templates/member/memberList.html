@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header"/>
+<body>
+<div class="container">
+    <div th:replace="fragments/bodyHeader :: bodyHeader" />
+    <div>
+        <table class="table table-striped">
+            <thead>
+            <tr class="table-dark" align="center">
+                <th>ID</th>
+                <th>이름</th>
+                <th>생년월일</th>
+                <th>E-Mail</th>
+                <th>특이사항</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- medel안에 members를 찾는다 thymeleaf문법 foreach  -->
+            <tr th:each="member : ${members}">
+                <td th:text="${member.userID}"></td>
+                <td th:text="${member.userName}"></td>
+                <td th:text="${member.userBirth}"></td>
+                <td th:text="${member.userEmail}"></td>
+                <td th:text="${member.userNote}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
