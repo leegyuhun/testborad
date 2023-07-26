@@ -24,4 +24,9 @@ public class HomeController {
         model.addAttribute("list", products);
         return "home";
     }
+
+    @GetMapping("/about")
+    public String about(Model model) {
+        return "about";
+    }
 }
